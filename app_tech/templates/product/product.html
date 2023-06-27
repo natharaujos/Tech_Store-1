@@ -28,6 +28,7 @@
             <h3>Manufacturer : {{product.manufacturer}}</h3>
             <span class="price">R${{product.price}}</span>
           </div>
+          {% if user.is_authenticated %}
           <div class="options">
             <form method="POST" action="{% url 'create-order' %}">
                 {% csrf_token %}
@@ -36,6 +37,7 @@
                 <button type="submit" style="margin-left: 25vh;"  class="btn btn-white btn-animate">Purchase</button>
               </form>
           </div>
+          {% endif %}
         </div>
       </div>
     </div>
