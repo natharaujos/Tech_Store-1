@@ -1,0 +1,145 @@
+.items {
+  align-self: flex-end;
+}
+
+.right-side h6 {
+  color: black;
+  font-size: 30px;
+}
+
+.right-side h1 {
+  color: black;
+  font-size: 2rem;
+}
+
+.right-side h3 {
+  color: black;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.right-side p {
+  color: black;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+.price {
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 10px 20px;
+  background-color: black;
+  width: fit-content;
+  border-radius: 10px;
+}
+
+.cont {
+  font-size: 25px;
+  color: black;
+}
+.minus,
+.plus {
+  cursor: pointer;
+}
+.button {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: black;
+  padding: 10px 35px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.button:hover {
+  color: black;
+}
+.button img {
+  font-size: 22px;
+}
+.options {
+  display: flex;
+  gap: 25px;
+}
+.content {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: absolute;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background-color: gray;
+    color: black;
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

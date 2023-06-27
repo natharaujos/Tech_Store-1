@@ -1,0 +1,91 @@
+{% extends 'base.html' %} {% block conteudo %}
+<html lang="en">
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/homeStyle.css' %}" />
+  </head>
+  <section class="shop" id="products">
+    <div class="container">
+      <div class="row py-5">
+        <div class="col-lg-5 m-auto text-center">
+          <h1>Explore Our Store</h1>
+          <h6 style="color: red; font-size: 18px;">Pick Your Product From Our Store</h6>
+        </div>
+      </div>
+      <div class="row">
+        {% for product in products %}
+        <div class="col-lg-3 text-center">
+          <a href="{% url 'product_details' product.id_product %}" style="text-decoration: none;">
+          <div class="card border-0 mb-2" style="border-radius: 1rem;">
+            <div class="card-body" style="background-color: #d1cece; border-radius: 1rem;">
+              <img src="{{ product.image.url }}" class="img-fluid" width="160" height="260">
+            </div>
+          </div>
+          </a>
+          <div style="height: 50px;" id="product-title">
+            <h6 style="font-weight: bold; font-size: 20px;">{{product.name}}</h6>
+          </div>
+          <div style="margin-top:25px">
+            <p class="price" >R${{product.price}}</p>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div style="display: flex;justify-content: center; margin-bottom: 8vh;">
+      {% if products%}
+      <span >
+          {% if products.has_previous %}
+              <a href="?page={{ products.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
+          {% endif %}
+          
+          {% if products.paginator.num_pages %}
+          <span style=" margin-left: 5px;margin-right: 5px;">
+              {{ products.number }} de {{ products.paginator.num_pages }}
+          </span>
+          {% endif %}
+      
+          {% if products.has_next %}
+              <a href="?page={{ products.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+          {% endif %}
+      </span>
+      {% endif %}
+  </div>
+  </section>
+
+  <section class="contact" style="background-color: #d1cece;">
+    <div class="container py-5">
+      <div class="d-flex justify-content-center align-items-center row-cols-12">
+          <div class="col-lg-6 m-auto text-start">
+            <h1>Contact Us</h1>
+            <h6 style="color: red">Always Be In Touch With Us</h6>
+          </div>
+          <div class="col-lg-6 m-auto text-center">
+            <div class="teste text-start">
+              <h6>LOCATION</h6>
+              <p>Lavras, Rua Avenida Pedro Sales, 48 - Bairro: Centro</p>
+              <h6>PHONE</h6>
+              <p>(35)99821-4788 or (37)99856-2612</p>
+              <h6>EMAIL</h6>
+              <p>igor.morais@estudante.ufla.br</p>
+              <p>nathan.silva1@estudante.ufla.br</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="news py-5">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-9 m-auto text-center">
+          <h1>Join Our Secret Society</h1>
+          <input type="text" class="px-3" placeholder="Enter Your Email" />
+          <button class="btn2">Submit</button>
+        </div>
+      </div>
+      <hr />
+      <p class="text-center copy">Copyright Nathan e Igor</p>
+    </div>
+  </section>
+  {% endblock %}
+</html>

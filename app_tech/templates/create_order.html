@@ -1,0 +1,13 @@
+<h1>Create Order</h1>
+  <form method="POST" action="{% url 'order-list' %}">
+    {% csrf_token %}
+    <div>
+      <label for="client">Client:</label>
+      <input type="text" id="client" name="client" value="{{ request.user }}" readonly>
+    </div>
+    <div>
+      <label for="date">Date:</label>
+      <input type="text" id="date" name="date" value="{{ datetime.now }}" readonly>
+    </div>
+    <button type="submit">Create Order</button>
+  </form>

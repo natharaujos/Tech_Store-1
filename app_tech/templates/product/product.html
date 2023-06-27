@@ -1,0 +1,50 @@
+{% extends '../base.html' %} {% block conteudo %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/productDetail.css' %}" />
+<section class="product-detail">
+  <div
+    class="container d-flex flex-column justify-content-center align-items-center"
+    style="height: 92vh"
+  >
+    <div
+      class="d-flex row w-100 py-lg-5"
+      style="background-color: #d1cece; border-radius: 1rem"
+    >
+      <div class="d-flex justify-content-center align-items-center row">
+        <div class="col-lg-6 d-flex justify-content-center align-items-center">
+          <div class="items">
+            <div style="background-color: #ffff; border-radius: 1rem">
+              <img src="{{ product.image.url }}" width="320" height="400" />
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="content">
+            <h1 class="mb-4">{{product.name}}</h1>
+            <p style="height: 100px">{{product.description}}</p>
+          </div>
+          <div>
+            <h3>Category : {{product.category}}</h3>
+            <h3>Quantity in Stock : {{product.quantity}}</h3>
+            <h3>Manufacturer : {{product.manufacturer}}</h3>
+            <span class="price">R${{product.price}}</span>
+          </div>
+          <div class="options">
+            <form method="POST" action="{% url 'create-order' %}">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="{{ product.id_product }}">
+                <input type="number" name="quantity" min="1" max="{{ product.quantity }}" value="1">
+                <button type="submit" style="margin-left: 25vh;"  class="btn btn-white btn-animate">Purchase</button>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+
+
+
+
+

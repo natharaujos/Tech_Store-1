@@ -1,0 +1,18 @@
+{% block conteudo %}{% load static %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}" />
+<form method="post">
+  {% csrf_token %}
+  <div class="container">
+    <h1>Register Tech Store</h1>
+    <input type="hidden" name="next" value="{{ next }}" />
+
+    {{ form}}
+
+    <button>Register</button>
+    <p class="login">
+        Already have an account?
+        <a class="link" href="/accounts/login">Click here</a>
+      </p>
+  </div>
+</form>
+{% endblock %}
