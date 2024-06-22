@@ -5,9 +5,7 @@ Tech Store is an e-commerce platform built with Django, featuring a messaging sy
 ## Table of Contents
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -52,7 +50,8 @@ Browse the store, add products to the cart, and complete orders through the chec
 
 Monitor messages using the integrated messaging system powered by Pika.
 
-Contributing
+## Contributing
+
 Contributions are welcome! Here's how you can contribute to the project:
 
 Fork the repository.
