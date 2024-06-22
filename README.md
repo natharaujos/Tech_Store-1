@@ -26,36 +26,27 @@ Tech Store is an e-commerce platform built with Django, featuring a messaging sy
    git clone https://github.com/your/repository.git
    cd Tech-Store
 
-Create a virtual environment and activate it:
+2. Install Python dependencies using pip:
+   
+   ```bash
+   pip install -r requirements.txt
 
-bash
-Copiar código
-python -m venv env
-source env/bin/activate  # On Windows use `env\Scripts\activate`
-Install dependencies:
+3. Apply database migrations:
 
-bash
-Copiar código
-pip install -r requirements.txt
-Apply database migrations:
+   ```bash
+   python manage.py migrate
 
-bash
-Copiar código
-python manage.py migrate
-Run the development server:
+4. Create a superuser (admin account) for accessing the admin dashboard:
 
-bash
-Copiar código
-python manage.py runserver
-Access the application at http://localhost:8000.
+   ```bash
+   python manage.py createsuperuser
+   
+5. Run the development server:
 
-Usage
-Create a superuser to access the admin interface:
+   ```bash
+   python manage.py runserver
 
-bash
-Copiar código
-python manage.py createsuperuser
-Use the admin interface (http://localhost:8000/admin) to manage products, orders, and users.
+6. Access the application at http://localhost:8000.
 
 Browse the store, add products to the cart, and complete orders through the checkout process.
 
